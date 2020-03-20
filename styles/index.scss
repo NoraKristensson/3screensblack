@@ -1,0 +1,109 @@
+$font-color: white;
+
+@mixin text {
+  color: $font-color;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+@mixin navtext {
+  @include text;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin textcontent {
+  @include text;
+  font-size: 22px;
+  line-height: 34px;
+}
+
+@mixin headline {
+  color: $font-color;
+  font-family: "Poppins", sans-serif;
+  font-size: 84px;
+  line-height: 102px;
+  letter-spacing: -2px;
+  margin-top: 0px;
+}
+
+@mixin flex($justify, $align) {
+  justify-content: $justify;
+  align-items: $align;
+  display: flex;
+}
+
+@mixin ram1 {
+  border: solid 1px red;
+}
+
+@mixin ram2 {
+  border: solid 1px yellow;
+}
+
+@mixin ram3 {
+  border: solid 1px lightblue;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 1440px;
+  width: 100%;
+  max-height: 100vh;
+  background-color: #000000;
+  box-sizing: border-box;
+  color: $font-color;
+  @include flex(center, flex-end);
+}
+
+.left,
+.right {
+  @include flex(center, center);
+  flex-direction: column;
+  justify-content: space-between;
+  @include ram2;
+  height: 100vh;
+  width: 100%;
+}
+
+nav {
+  @include flex(flex-end, center);
+  @include ram3;
+
+  width: 100%;
+
+  ul {
+    list-style: none;
+    @include flex(flex-end, center);
+    @include ram1;
+    justify-content: space-between;
+    max-width: 267px;
+    width: 100%;
+    padding-inline-end: 40px;
+    padding-inline-start: 0px;
+  }
+  li {
+  }
+  a {
+    text-decoration: none;
+    @include navtext;
+  }
+}
+
+.content {
+  @include ram3;
+  max-width: 416px;
+  width: 100%;
+  @include flex(center, center);
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+
+  h1 {
+    @include headline;
+  }
+
+  p {
+    @include textcontent;
+  }
+}
