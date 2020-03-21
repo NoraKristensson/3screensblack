@@ -47,7 +47,7 @@ main {
 
 .left,
 .right {
-  width: 50%;
+  height: 100vh;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -62,8 +62,6 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   border: solid 1px lightblue;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 nav {
@@ -153,7 +151,6 @@ nav a:hover {
 
 .right {
   background: url(/img/man.png) no-repeat center center;
-  height: 100vh;
   min-width: 585px;
 }
 
